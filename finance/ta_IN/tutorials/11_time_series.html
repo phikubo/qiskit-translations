@@ -6,7 +6,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ta-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Loading and Processing Stock-Market Time-Series Data &mdash; Qiskit Finance 0.2.1 documentation</title>
@@ -486,9 +487,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/11_time_series.ipynb">docs/tutorials/11_time_series.ipynb</a>.</p>
 </div>
-<div class="section" id="Loading-and-Processing-Stock-Market-Time-Series-Data">
+<section id="Loading-and-Processing-Stock-Market-Time-Series-Data">
 <h1>Loading and Processing Stock-Market Time-Series Data<a class="headerlink" href="#Loading-and-Processing-Stock-Market-Time-Series-Data" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Introduction">
+<section id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h2>
 <p>நிதிகளில் பல சிக்கல்களில், ஒன்று நேரத் தொடரில் தொடங்குகிறது. போலி-சீரற்ற நேரத் தொடரை எவ்வாறு உருவாக்குவது, பல பொதுவான வழங்குநர்களிடமிருந்து உண்மையான பங்கு-சந்தை நேரத் தொடரைப் பதிவிறக்குவது மற்றும் நேர-தொடர் ஒற்றுமை நடவடிக்கைகளை எவ்வாறு கணக்கிடுவது என்பதை இங்கே காண்பிக்கிறோம்.</p>
 <div class="nbinput nblast docutils container">
@@ -650,8 +651,8 @@ TICKER2
 <img alt="../_images/tutorials_11_time_series_9_0.png" src="../_images/tutorials_11_time_series_9_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="இறுதி-விலை-நேரத்-தொடருக்கான-அணுகல்">
+</section>
+<section id="இறுதி-விலை-நேரத்-தொடருக்கான-அணுகல்">
 <h2>இறுதி விலை நேரத் தொடருக்கான அணுகல்<a class="headerlink" href="#இறுதி-விலை-நேரத்-தொடருக்கான-அணுகல்" title="Permalink to this headline">¶</a></h2>
 <p>நிகழ்நேர தரவை அணுகுவதற்கு வழக்கமாக கட்டணம் தேவைப்பட்டாலும், விக்கிபீடியா மற்றும் குவாண்டல் வழியாக வரலாற்று (சரிசெய்யப்பட்ட) இறுதி விலைகளை இலவசமாக அணுக முடியும், பதிவுசெய்ததைத் தொடர்ந்து: <a class="reference external" href="https://www.quandl.com/?modal=register">https://www.quandl.com/?modal=register</a> கீழேயுள்ள குறியீட்டில், உண்மையான NASDAQ சிக்கல்களின் உண்மையான டிக்கர்களையும் குவாண்டலில் இருந்து நீங்கள் பெறும் அணுகல் டோக்கனையும் ஒருவர் குறிப்பிட வேண்டும்; கீழே உள்ள குறியீட்டை இயக்குவதன் மூலம், பொறுப்பு தள்ளுபடி உள்ளிட்ட குவாண்டல் விதிமுறைகளையும் நிபந்தனைகளையும் ஒப்புக்கொள்கிறீர்கள். கோவாரன்ஸ் மற்றும் நேர-தொடர் மெட்ரிக்ஸைக் கணக்கிடுவதற்கு குறைந்தது இரண்டு டிக்கர்கள் தேவை என்பதைக் கவனியுங்கள், ஆனால் நூற்றுக்கணக்கான டிக்கர்கள் குவாண்டலின் நியாயமான பயன்பாட்டு வரம்புகளுக்கு அப்பால் செல்லக்கூடும்.</p>
 <div class="nbinput nblast docutils container">
@@ -726,8 +727,8 @@ TICKER2
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="[Optional]-சமீபத்திய,-நேர்த்தியான-நேரத்-தொடரை-அணுக-டோக்கனை-அமைக்கவும்">
+</section>
+<section id="[Optional]-சமீபத்திய,-நேர்த்தியான-நேரத்-தொடரை-அணுக-டோக்கனை-அமைக்கவும்">
 <h2>[Optional] சமீபத்திய, நேர்த்தியான நேரத் தொடரை அணுக டோக்கனை அமைக்கவும்<a class="headerlink" href="#[Optional]-சமீபத்திய,-நேர்த்தியான-நேரத்-தொடரை-அணுக-டோக்கனை-அமைக்கவும்" title="Permalink to this headline">¶</a></h2>
 <p>நீங்கள் தொழில்முறை தரவைப் பதிவிறக்க விரும்பினால், முக்கிய வழங்குநர்களில் ஒருவரிடம் டோக்கனை அமைக்க வேண்டும். NASDAQ டேட்டா தேவை தரவை இப்போது விளக்குவோம், இது ஏலத்தை வழங்கலாம் மற்றும் தன்னிச்சையான தீர்மானத்தில் விலைகளைக் கேட்கலாம், அத்துடன் NASDAQ மற்றும் NYSE சிக்கல்களுக்கு தினசரி சரிசெய்யப்பட்ட நிறைவு விலைகள் போன்ற திரட்டுகளையும் வழங்கலாம்.</p>
 <p>உங்களிடம் கோரிக்கை உரிமத்தில் NASDAQ தரவு இல்லையென்றால், சோதனை அல்லது கட்டண உரிமத்தைப் பெற NASDAQ (cf. <a class="reference external" href="https://business.nasdaq.com/intel/GIS/Nasdaq-Data-on-Demand.html">https://business.nasdaq.com/intel/GIS/Nasdaq-Data-on-Demand.html</a>) ஐ தொடர்பு கொள்ளலாம்.</p>
@@ -848,8 +849,8 @@ TICKER2
 </pre></div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
              </article>

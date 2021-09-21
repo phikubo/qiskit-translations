@@ -6,10 +6,11 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="pt-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pricing Basket Options &mdash; Documentação Qiskit Finance 0.2.1</title>
+  <title>Precificando Basket Options &mdash; Documentação Qiskit Finance 0.2.1</title>
   
 
   
@@ -39,8 +40,8 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Pesquisar" href="../search.html" />
-    <link rel="next" title="Pricing Asian Barrier Spreads" href="07_asian_barrier_spread_pricing.html" />
-    <link rel="prev" title="Pricing Bull Spreads" href="05_bull_spread_pricing.html" /> 
+    <link rel="next" title="Precificando Barrier Spreads Asiáticas" href="07_asian_barrier_spread_pricing.html" />
+    <link rel="prev" title="Precificando Bull Spreads" href="05_bull_spread_pricing.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -202,9 +203,9 @@
       </li>
 
         
-          <li><a href="index.html">Finance Tutorials</a> &gt;</li>
+          <li><a href="index.html">Tutoriais de Finanças</a> &gt;</li>
         
-      <li>Pricing Basket Options</li>
+      <li>Precificando Basket Options</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,11 +485,11 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/06_basket_option_pricing.ipynb">docs/tutorials/06_basket_option_pricing.ipynb</a>.</p>
+<p>Esta página foi gerada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/06_basket_option_pricing.ipynb">docs/tutorials/06_basket_option_pricing.ipynb</a>.</p>
 </div>
-<div class="section" id="Pricing-Basket-Options">
-<h1>Pricing Basket Options<a class="headerlink" href="#Pricing-Basket-Options" title="Link permanente para este título">¶</a></h1>
-<div class="section" id="Introdução">
+<section id="Precificando-Basket-Options">
+<h1>Precificando Basket Options<a class="headerlink" href="#Precificando-Basket-Options" title="Link permanente para este título">¶</a></h1>
+<section id="Introdução">
 <h2>Introdução<a class="headerlink" href="#Introdução" title="Link permanente para este título">¶</a></h2>
 <p>Suponha uma opção basket com preço de exercício <span class="math notranslate nohighlight">\(K\)</span> e dois ativos subjacentes, cujos preços, à vista, no vencimento <span class="math notranslate nohighlight">\(S_T^1\)</span>, <span class="math notranslate nohighlight">\(S_T^2\)</span> seguem uma dada distribuição aleatória. A função payoff correspondente é definida como:</p>
 <div class="math notranslate nohighlight">
@@ -520,8 +521,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Modelo-de-incerteza">
+</section>
+<section id="Modelo-de-incerteza">
 <h2>Modelo de incerteza<a class="headerlink" href="#Modelo-de-incerteza" title="Link permanente para este título">¶</a></h2>
 <p>Construímos uma fábrica de circuitos para carregar uma distribuição aleatória multivariada log-normal em um estado quântico de <span class="math notranslate nohighlight">\(n\)</span> qubits. Para cada dimensão <span class="math notranslate nohighlight">\(j = 1,\ldots,d\)</span>, a distribuição é truncada para um determinado intervalo <span class="math notranslate nohighlight">\([\text{low}_j, \text{high}_j]\)</span> e discretizada usando <span class="math notranslate nohighlight">\(2^{n_j}\)</span> pontos da grade, onde <span class="math notranslate nohighlight">\(n_j\)</span> denota o número de qubits usados para representar a dimensão <span class="math notranslate nohighlight">\(j\)</span>, ou seja, <span class="math notranslate nohighlight">\(n_1+\ldots+n_d = n\)</span>. O operador unitário correspondente à fábrica de circuitos implementa o seguinte:</p>
 <div class="math notranslate nohighlight">
@@ -599,8 +600,8 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_06_basket_option_pricing_5_0.svg" src="../_images/tutorials_06_basket_option_pricing_5_0.svg" /></div>
 </div>
-</div>
-<div class="section" id="Função-Payoff">
+</section>
+<section id="Função-Payoff">
 <h2>Função Payoff<a class="headerlink" href="#Função-Payoff" title="Link permanente para este título">¶</a></h2>
 <p>A função payoff é igual a zero, enquanto a soma dos preços à vista no vencimento <span class="math notranslate nohighlight">\((S_T^1 + S_T^2)\)</span> é menor do que o preço de exercício <span class="math notranslate nohighlight">\(K\)</span>, e, depois aumenta linearmente. A implementação usa inicialmente um operador de soma ponderada para computar a soma dos preços à vista no registrador auxiliar e, então, usa um comparador, que inverte o qubit auxiliar de <span class="math notranslate nohighlight">\(\big|0\rangle\)</span> para <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> se <span class="math notranslate nohighlight">\((S_T^1 + S_T^2) \geq K\)</span>. Este auxiliar é usado para controlar a parte linear da função payoff.</p>
 <p>A própria parte linear é aproximada da seguinte maneira. Exploramos o fato de que <span class="math notranslate nohighlight">\(\sin^2(y + \pi/4) \approx y + 1/2\)</span> para <span class="math notranslate nohighlight">\(|y|\)</span> pequeno. Assim, para um dado fator de reescalonamento de aproximação <span class="math notranslate nohighlight">\(c_\text{approx} \in [0, 1]\)</span> e <span class="math notranslate nohighlight">\(x \in [0, 1]\)</span> consideramos</p>
@@ -612,7 +613,7 @@ div.rendered_html tbody tr:hover {
 \[\big|x\rangle \big|0\rangle \mapsto \big|x\rangle \left( \cos(a*x+b) \big|0\rangle + \sin(a*x+b) \big|1\rangle \right),\]</div>
 <p>usando rotações Y controladas.</p>
 <p>Eventualmente, estamos interessados na probabilidade de medir <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> no último qubit, o que corresponde a <span class="math notranslate nohighlight">\(\sin^2(a*x+b)\)</span>. Juntamente com a aproximação, acima, isto permite aproximar os valores de interesse. Quanto menor o <span class="math notranslate nohighlight">\(c_\text{approx}\)</span> escolhido, melhor a aproximação. No entanto, uma vez que estamos estimando uma propriedade escalonada por <span class="math notranslate nohighlight">\(c_\text{approx}\)</span> em seguida, o número de qubits de avaliação <span class="math notranslate nohighlight">\(m\)</span> precisa ser ajustado de acordo.</p>
-<p>For more details on the approximation, we refer to: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
+<p>Para mais detalhes sobre a aproximação, nos referimos a: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
 <p>Uma vez que o operador de soma ponderada (em sua implementação atual) pode apenas somar números inteiros, precisamos mapear dos intervalos originais até o intervalo representável, para estimar o resultado, e reverter este mapeamento, antes de interpretar o resultado. O mapeamento corresponde, essencialmente, ao mapeamento afim, descrito no contexto do modelo de incerteza acima.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -766,8 +767,8 @@ objective qubit index 4
 exact expected value:   0.4870
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Avaliando-o-Payoff-Esperado">
+</section>
+<section id="Avaliando-o-Payoff-Esperado">
 <h2>Avaliando o Payoff Esperado<a class="headerlink" href="#Avaliando-o-Payoff-Esperado" title="Link permanente para este título">¶</a></h2>
 <p>Verificamos, primeiramente, o circuito quântico, simulando-o e analisando a probabilidade resultante, para medir o estado <span class="math notranslate nohighlight">\(|1\rangle\)</span> no qubit objetivo.</p>
 <div class="nbinput docutils container">
@@ -916,8 +917,8 @@ Confidence interval:    [0.4493, 0.5357]
 </pre></div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
              </article>
@@ -927,10 +928,10 @@ Confidence interval:    [0.4493, 0.5357]
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="07_asian_barrier_spread_pricing.html" class="btn btn-neutral float-right" title="Pricing Asian Barrier Spreads" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="07_asian_barrier_spread_pricing.html" class="btn btn-neutral float-right" title="Precificando Barrier Spreads Asiáticas" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="05_bull_spread_pricing.html" class="btn btn-neutral" title="Pricing Bull Spreads" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="05_bull_spread_pricing.html" class="btn btn-neutral" title="Precificando Bull Spreads" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -962,7 +963,7 @@ Confidence interval:    [0.4493, 0.5357]
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Pricing Basket Options</a><ul>
+<li><a class="reference internal" href="#">Precificando Basket Options</a><ul>
 <li><a class="reference internal" href="#Introdução">Introdução</a></li>
 <li><a class="reference internal" href="#Modelo-de-incerteza">Modelo de incerteza</a></li>
 <li><a class="reference internal" href="#Função-Payoff">Função Payoff</a></li>
