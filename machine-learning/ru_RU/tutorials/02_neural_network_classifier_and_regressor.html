@@ -6,7 +6,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ru-RU" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Классификатор нейросети и регрессор &mdash; документация Qiskit Machine Learning 0.2.1</title>
@@ -31,8 +32,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -510,7 +511,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Примечание</p>
 <p>Страница создана на основе <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/02_neural_network_classifier_and_regressor.ipynb">docs/tutorials/02_neural_network_classifier_and_regressor.ipynb</a>.</p>
 </div>
-<div class="section" id="Классификатор-нейросети-и-регрессор">
+<section id="Классификатор-нейросети-и-регрессор">
 <h1>Классификатор нейросети и регрессор<a class="headerlink" href="#Классификатор-нейросети-и-регрессор" title="Ссылка на этот заголовок">¶</a></h1>
 <p>В этом разделе мы покажем, как используются <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier''</span> <span class="pre">и</span> <span class="pre">``NeuralNetworkRegressor''.</span> <span class="pre">Оба</span> <span class="pre">принимают</span> <span class="pre">на</span> <span class="pre">вход</span> <span class="pre">(квантовую)</span> <span class="pre">``NeuralNetwork</span></code> и используют ее в определенном контексте. В обоих случаях мы также предоставляем предварительно настроенные варианты для удобства, Вариационный Квантовый Классификатор (<code class="docutils literal notranslate"><span class="pre">VQC</span></code>) и Вариационный Квантовый Регрессор (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>). Руководство построено следующим образом:</p>
 <ol class="arabic simple">
@@ -564,7 +565,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="Классификация">
+<section id="Классификация">
 <h2>Классификация<a class="headerlink" href="#Классификация" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Мы создаем простой набор данных для классификации, чтобы проиллюстрировать следующие алгоритмы.</p>
 <div class="nbinput docutils container">
@@ -598,7 +599,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" />
 </div>
 </div>
-<div class="section" id="Классификация-с-помощью-OpflowQNN">
+<section id="Классификация-с-помощью-OpflowQNN">
 <h3>Классификация с помощью <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#Классификация-с-помощью-OpflowQNN" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Сначала мы покажем, как <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> можно использовать для классификации в рамках <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code>. В этом случае ожидается, что <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> вернет одномерный результат в <span class="math notranslate nohighlight">\([-1, +1]\)</span>. Это работает только для бинарной классификации, и мы присваиваем два класса <span class="math notranslate nohighlight">\(\{-1, +1\}\)</span>. Для удобства мы используем <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code>, который является специальным типом <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code>, определенным через карту признаков и анзац.</p>
 <div class="nbinput nblast docutils container">
@@ -724,8 +725,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="Классификация-с-помощью-&quot;-CircuitQNN-`-`">
+</section>
+<section id="Классификация-с-помощью-&quot;-CircuitQNN-`-`">
 <h3>Классификация с помощью » CircuitQNN ` `<a class="headerlink" href="#Классификация-с-помощью-"-CircuitQNN-`-`" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Далее мы покажем, как <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> можно использовать для классификации в <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code>. В этом случае ожидается, что <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> возвращает <span class="math notranslate nohighlight">\(d\)</span>-размерный вектор вероятности в качестве вывода, где <span class="math notranslate nohighlight">\(d\)</span> обозначает число классов. Выборка из <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> автоматически приводит к распределению вероятностей, и нам просто нужно определить соответствие между измеренными битами и разными классами. Для двоичной классификации используется преобра отображение по четности.</p>
 <div class="nbinput docutils container">
@@ -859,8 +860,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="Вариационный-квантовый-классификатор-(VQC)">
+</section>
+<section id="Вариационный-квантовый-классификатор-(VQC)">
 <h3>Вариационный квантовый классификатор (<code class="docutils literal notranslate"><span class="pre">VQC</span></code>)<a class="headerlink" href="#Вариационный-квантовый-классификатор-(VQC)" title="Ссылка на этот заголовок">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">VQC</span></code> - это специальный вариант <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> с <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code>. Он использует отображение по четности (или расширения для нескольких классов) для отображения от битовой строки к классификации, в результате чего получается вектор вероятностей, который интерпретируется как результат, закодированный унитарным кодом. По умолчанию применяется функция <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss</span></code>, которая ожидает метки в формате унитарного кода и возвращает предсказания в этом формате.</p>
 <div class="nbinput nblast docutils container">
@@ -947,9 +948,9 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="Регрессия">
+</section>
+</section>
+<section id="Регрессия">
 <h2>Регрессия<a class="headerlink" href="#Регрессия" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Мы создаем простой регрессионный набор данных для иллюстрации следующих алгоритмов.</p>
 <div class="nbinput docutils container">
@@ -979,7 +980,7 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" />
 </div>
 </div>
-<div class="section" id="Регрессия-с-`-`-OpflowQNN-`-`">
+<section id="Регрессия-с-`-`-OpflowQNN-`-`">
 <h3>Регрессия с ` ` OpflowQNN ` `<a class="headerlink" href="#Регрессия-с-`-`-OpflowQNN-`-`" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Здесь мы ограничимся регрессией с <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code>, которая возвращает значения в <span class="math notranslate nohighlight">\([-1, +1]\)</span>. Можно построить более сложные и многомерные модели, также основанные на <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code>, но это выходит за рамки данного руководства.</p>
 <div class="nbinput nblast docutils container">
@@ -1076,8 +1077,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="Регрессия-с-помощью-Вариационной-Квантовой-Регрессии-(VQR)">
+</section>
+<section id="Регрессия-с-помощью-Вариационной-Квантовой-Регрессии-(VQR)">
 <h3>Регрессия с помощью Вариационной Квантовой Регрессии (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>)<a class="headerlink" href="#Регрессия-с-помощью-Вариационной-Квантовой-Регрессии-(VQR)" title="Ссылка на этот заголовок">¶</a></h3>
 <p>По аналогии с <code class="docutils literal notranslate"><span class="pre">VQC</span></code> для классификации, <code class="docutils literal notranslate"><span class="pre">VQR</span></code> - это специальный вариант <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor</span></code> с <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code>. По умолчанию он рассматривает функцию <code class="docutils literal notranslate"><span class="pre">L2Loss</span></code> для минимизации средней квадратичной ошибки между предсказаниями и целями.</p>
 <div class="nbinput nblast docutils container">
@@ -1177,9 +1178,9 @@ parameters mentioned passed.</p>
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
              </article>

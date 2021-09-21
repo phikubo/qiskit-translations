@@ -6,7 +6,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="el-GR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Ξεκινώντας &mdash; Τεκμηρίωση του Qiskit Machine Learning - 0.2.1</title>
@@ -31,8 +32,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="_static/style.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -256,15 +257,15 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <br><br><br><div class="section" id="getting-started">
+  <br><br><br><section id="getting-started">
 <h1>Ξεκινώντας<a class="headerlink" href="#getting-started" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
-<div class="section" id="installation">
+<section id="installation">
 <h2>Εγκατάσταση<a class="headerlink" href="#installation" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h2>
 <p>Η Μηχανική Εκμάθηση Qiskit εξαρτάται από το κύριο πακέτο Qiskit που έχει το δικό του «Qiskit Getting Started &lt;<a class="reference external" href="https://qiskit.org/documentation/getting_started.html">https://qiskit.org/documentation/getting_started.html</a>&gt;«__ που περιγράφει λεπτομερώς τις επιλογές εγκατάστασης για το Qiskit και τα υποστηριζόμενα περιβάλλοντα/πλατφόρμες. Στη συνέχεια, οι πληροφορίες εδώ μπορεί να ακολουθηθεί η οποία επικεντρώνεται στην πρόσθετη εγκατάσταση ειδικά για την Qiskit μάθηση μηχανής.</p>
 <p>Η Μηχανική Εκμάθηση Qiskit έχει κάποιες λειτουργίες που έχουν γίνει προαιρετικές όπου ο εξαρτώμενος κώδικας ή/και το πρόγραμμα(τα) υποστήριξης δεν είναι (ή δεν μπορεί να είναι) εγκατεστημένο από προεπιλογή. Αυτά είναι τα PyTorch και Sparse. Δείτε το <a class="reference internal" href="#optional-installs"><span class="std std-ref">Προαιρετικές εγκαταστάσεις</span></a> για περισσότερες πληροφορίες.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="be683caf-9f4e-449c-89a4-db683cc6192b" name="1d96f5e0-056f-4796-9fbc-8f438b35cfdf" type="radio">
-</input><label class="tabbed-label" for="be683caf-9f4e-449c-89a4-db683cc6192b">
+<input checked="checked" id="b78f6451-62c1-4ac0-a6ce-c129c00a2978" name="1c6bc78e-0858-45ff-92e4-54e7000ad3a6" type="radio">
+</input><label class="tabbed-label" for="b78f6451-62c1-4ac0-a6ce-c129c00a2978">
 Εκκίνηση τοπικά</label><div class="tabbed-content docutils">
 <p>Ο απλούστερος τρόπος για να ξεκινήσετε είναι να ακολουθήσετε το “Ξεκινήστε τοπικά” για Qiskit εδώ ` Qiskit Ξεκινώντας &lt;<a class="reference external" href="https://qiskit.org/documentation/getting_started.html">https://qiskit.org/documentation/getting_started.html</a>&gt;` __ _</p>
 <p>Στο εικονικό περιβάλλον σας, όπου εγκαταστήσατε το Qiskit απλά προσθέστε το <code class="docutils literal notranslate"><span class="pre">machine-learning</span></code> στην επιπλέον λίστα με παρόμοιο τρόπο όπως εγκαθίσταται η επιπλέον υποστήριξη <code class="docutils literal notranslate"><span class="pre">visualization</span></code> για το Qiskit, δηλαδή:</p>
@@ -276,8 +277,8 @@
 </pre></div>
 </div>
 </div>
-<input id="1ec6f8f7-5ed3-4a2d-bd3c-de1c3e3f96a9" name="1d96f5e0-056f-4796-9fbc-8f438b35cfdf" type="radio">
-</input><label class="tabbed-label" for="1ec6f8f7-5ed3-4a2d-bd3c-de1c3e3f96a9">
+<input id="4615c1b7-7af8-4d59-befd-f509a35ba571" name="1c6bc78e-0858-45ff-92e4-54e7000ad3a6" type="radio">
+</input><label class="tabbed-label" for="4615c1b7-7af8-4d59-befd-f509a35ba571">
 Εγκατάσταση από την πηγή</label><div class="tabbed-content docutils">
 <p>Η εγκατάσταση του Qiskit Machine Learning από την πηγή, σας επιτρέπει να αποκτήσετε πρόσβαση στην πιο πρόσφατα ενημερωμένη υπό ανάπτυξη έκδοση αντί να χρησιμοποιήσετε την έκδοση στο αποθετήριο του Python Package Index (PyPi). Αυτό θα σας δώσει τη δυνατότητα να επιθεωρήσετε και να επεκτείνετε πιο αποτελεσματικά την τελευταία έκδοση του κώδικα μηχανικής μάθησης Qiskit.</p>
 <p>Δεδομένου ότι Qiskit Machine Learning εξαρτάται από Qiskit, και οι τελευταίες αλλαγές του μπορεί να απαιτήσουν νέα ή τροποποιημένα χαρακτηριστικά του Qiskit, θα πρέπει πρώτα να ακολουθήσετε τις οδηγίες του Qiskit <cite>«Install from source»</cite> εδώ <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a></p>
@@ -310,8 +311,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="optional-installs">
+</section>
+<section id="optional-installs">
 <span id="id1"></span><h2>Προαιρετικές εγκαταστάσεις<a class="headerlink" href="#optional-installs" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h2>
 <ul class="simple">
 <li><p><strong>PyTorch</strong>, may be installed either using command <cite>pip install “qiskit-machine-learning[torch]”</cite> to install the
@@ -319,9 +320,9 @@ package or refer to PyTorch <a class="reference external" href="https://pytorch.
 is installed, the <cite>TorchConnector</cite> facilitates its use of quantum computed networks.</p></li>
 <li><p><strong>Sparse</strong>, μπορεί να εγκατασταθεί χρησιμοποιώντας την εντολή <cite>pip install “qiskit-machine-learning[sparse]”</cite> για να εγκαταστήσετε το πακέτο. Το Sparse που εγκαθίσταται θα ενεργοποιήσει τη χρήση αραιών πινάκων/tensors.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="ready-to-get-going">
+<section id="ready-to-get-going">
 <h2>Έτοιμοι για να προχωρήσετε;…<a class="headerlink" href="#ready-to-get-going" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h2>
 <div class="tutorials-callout-container">
    <div class="row"><p><div class="col-md-6">
@@ -332,8 +333,8 @@ is installed, the <cite>TorchConnector</cite> facilitates its use of quantum com
     </div>
 </div></p>
    </div>
-</div></div>
-</div>
+</div></section>
+</section>
 
 
              </article>

@@ -6,7 +6,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="tr-TR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Rastgele Dağıtımları Yüklemek için qGAN’lar &mdash; Qiskit Machine Learning 0.2.1 belgelendirmesi</title>
@@ -31,8 +32,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -510,7 +511,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Not</p>
 <p>Bu sayfa, <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/04_qgans_for_loading_random_distributions.ipynb">docs/tutorials/04_qgans_for_loading_random_distributions.ipynb</a> sayfasından oluşturulmuştur.</p>
 </div>
-<div class="section" id="Rastgele-Dağıtımları-Yüklemek-için-qGAN'lar">
+<section id="Rastgele-Dağıtımları-Yüklemek-için-qGAN'lar">
 <h1>Rastgele Dağıtımları Yüklemek için qGAN’lar<a class="headerlink" href="#Rastgele-Dağıtımları-Yüklemek-için-qGAN'lar" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
 <p>Verilen <span class="math notranslate nohighlight">\(k\)</span>-boyutlu veri örneklerini, verinin temeldeki rastgele dağılımını öğrenmek ve doğrudan bir kuantum durumuna yüklemek için bir kuantum Üretken Karşıt Ağ (quantum Generative Adversarial Network - qGAN) kullanıyoruz:</p>
 <div class="math notranslate nohighlight">
@@ -541,7 +542,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="Çalıştırma-Verilerinin-Yüklenmesi">
+<section id="Çalıştırma-Verilerinin-Yüklenmesi">
 <h2>Çalıştırma Verilerinin Yüklenmesi<a class="headerlink" href="#Çalıştırma-Verilerinin-Yüklenmesi" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>İlk olarak, <span class="math notranslate nohighlight">\(k\)</span> boyutlu eğitim verisi örneklerini yüklememiz gerekiyor (burada k=1).</p>
 <p>Ardından, veri çözünürlüğü, yani her bir veri boyutunu temsil etmek için kullanılan min/maks veri değerleri ve kübit sayısı ayarlanır.</p>
@@ -567,8 +568,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="qGAN'ı-başlatma">
+</section>
+<section id="qGAN'ı-başlatma">
 <h2>qGAN’ı başlatma<a class="headerlink" href="#qGAN'ı-başlatma" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>qGAN, bir kuantum üretecidir. <span class="math notranslate nohighlight">\(G_{\theta}\)</span>, yani bir ansatz , bir klasik ayırıcı <span class="math notranslate nohighlight">\(D_{\phi}\)</span>, ve bir sinir ağından oluşur.</p>
 <p>Kuantum üretecini uygulamak için, girdi durumu olarak düzenli bir dağılım alan <span class="math notranslate nohighlight">\(R_Y\)</span> dönüşlerini uygulayan bir derinlik için -<span class="math notranslate nohighlight">\(1\)</span> , ansatz ve <span class="math notranslate nohighlight">\(CZ\)</span> kapılarını seçiyoruz. Özellikle, <span class="math notranslate nohighlight">\(k&gt;1\)</span> için üretecin parametreleri dikkatli seçilmelidir.</p>
@@ -622,8 +623,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="qGAN-Eğitimini-çalıştırın">
+</section>
+<section id="qGAN-Eğitimini-çalıştırın">
 <h2>qGAN Eğitimini çalıştırın<a class="headerlink" href="#qGAN-Eğitimini-çalıştırın" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Eğitim sırasında diskriminatör ve üreten parametreleri aşağıdaki kayıp fonksiyonlar ile dönüşümlü olarak güncellenir:</p>
 <div class="math notranslate nohighlight">
@@ -669,8 +670,8 @@ Training results:
   rel_entr : 0.107
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Eğitim-İlerleyişi-ve-Sonucu">
+</section>
+<section id="Eğitim-İlerleyişi-ve-Sonucu">
 <h2>Eğitim İlerleyişi ve Sonucu<a class="headerlink" href="#Eğitim-İlerleyişi-ve-Sonucu" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Şimdi, eğitim sırasında üreticinin ve ayrımcının kayıp fonksiyonlarının evrimini ve ayrıca eğitilmiş ve hedef dağılım arasındaki göreli entropideki ilerlemesini çiziyoruz.</p>
 <p>Son olarak, eğitilmiş dağıtımın kümülatif dağılım fonksiyonunu (CDF) hedef dağılımın CDF’si ile de karşılaştırırız.</p>
@@ -785,8 +786,8 @@ Training results:
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
              </article>
