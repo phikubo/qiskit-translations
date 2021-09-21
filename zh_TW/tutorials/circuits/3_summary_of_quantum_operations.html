@@ -221,7 +221,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">文件首頁</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -230,27 +230,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit （Terra）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit 模擬（Aer）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit 實驗（Ignis）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit 應用程式模組（Aqua）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider）</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit 應用（Aqua）搬遷指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit 應用（Aqua）搬遷指南</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -1487,7 +1487,7 @@ array([[0.707-0.707j, 0.   +0.j   ],
 <h3>Qiskit 中的基底向量排序<a class="headerlink" href="#Qiskit-中的基底向量排序" title="本標題的永久連結">¶</a></h3>
 <p>Within the physics community, the qubits of a multi-qubit systems are typically ordered with the first qubit on the left-most side of the tensor product and the last qubit on the right-most side. For instance, if the first qubit is in state <span class="math notranslate nohighlight">\(\left|0\right\rangle\)</span> and second is in state <span class="math notranslate nohighlight">\(\left|1\right\rangle\)</span>, their joint state would be <span class="math notranslate nohighlight">\(\left|01\right\rangle\)</span>. Qiskit uses a slightly different ordering of the qubits, in which the qubits are represented from the most significant
 bit (MSB) on the left to the least significant bit (LSB) on the right (big-endian). This is similar to bitstring representation on classical computers, and enables easy conversion from bitstrings to integers after measurements are performed. For the example just given, the joint state would be represented as <span class="math notranslate nohighlight">\(\left|10\right\rangle\)</span>. Importantly, <em>this change in the representation of multi-qubit states affects the way multi-qubit gates are represented in Qiskit</em>, as discussed below.</p>
-<p>The representation used in Qiskit enumerates the basis vectors in increasing order of the integers they represent. For instance, the basis vectors for a 2-qubit system would be ordered as <span class="math notranslate nohighlight">\(\left|00\right\rangle\)</span>, <span class="math notranslate nohighlight">\(\left|01\right\rangle\)</span>, <span class="math notranslate nohighlight">\(\left|10\right\rangle\)</span>, and <span class="math notranslate nohighlight">\(\left|11\right\rangle\)</span>. Thinking of the basis vectors as bit strings, they encode the integers 0,1,2 and 3, respectively.</p>
+<p>Qiskit 中使用的表示法按照它們所表示的整數以升冪排序列出基底向量。例如，一個雙量子位元系統的基底向量會按照:math:<cite>left|00rightrangle</cite>, <span class="math notranslate nohighlight">\(\left|01\right\rangle\)</span>, <span class="math notranslate nohighlight">\(\left|10\right\rangle\)</span>, 和 <span class="math notranslate nohighlight">\(\left|11\right\rangle\)</span>。將基底向量視為位串，並分別將每個向量編碼為整數 0、1、2 和 3。</p>
 </section>
 <section id="量子位元的受控操作">
 <h3>量子位元的受控操作<a class="headerlink" href="#量子位元的受控操作" title="本標題的永久連結">¶</a></h3>
